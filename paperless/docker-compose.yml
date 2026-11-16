@@ -1,0 +1,41 @@
+services:
+  broker:
+    image: docker.io/library/redis:7
+    container_name: paperless_redis
+    restart: always
+
+  db:
+    image: docker.io/library/postgres:16
+    container_name: paperless_db
+    volumes:
+      - /home/homeserver/paperless_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: CHANGE_ME
+    restart: always
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    container_name: paperless_webserver
+    depends_on:
+      - db
+      - broker
+    ports:
+      - 8083:8000
+    volumes:
+      - /mnt/raid/paperless/data:/usr/src/paperless/data
+      - /mnt/raid/paperless/media:/usr/src/paperless/media
+      - /mnt/raid/nas/Paperless_Eingang:/usr/src/paperless/consume
+    environment:
+      USERMAP_UID: 1000
+      USERMAP_GID: 1000
+      PAPERLESS_SECRET_KEY: GENERATE_SECURE_KEY
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_DBPASS: CHANGE_ME
+      PAPERLESS_OCR_LANGUAGE: deu+eng
+      PAPERLESS_TIME_ZONE: Europe/Berlin
+      PAPERLESS_ADMIN_USER: admin
+      PAPERLESS_ADMIN_PASSWORD: CHANGE_ME
+    restart: always
