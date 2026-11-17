@@ -13,3 +13,4 @@
 - Dokumenten-Management: Paperless-ngx
 - Lokale KI: Ollama + Open WebUI
 - Git & DevOps: Gitea
+- Pi-hole ("Permit all origins" + Fritz!Box-DNS auf.69)
