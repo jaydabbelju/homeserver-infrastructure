@@ -14,3 +14,7 @@
 - Lokale KI: Ollama + Open WebUI
 - Git & DevOps: Gitea
 - Pi-hole ("Permit all origins" + Fritz!Box-DNS auf.69)
+
+## Weiteres
+- NAS eingerichtet + über WireGuard VPN auch aus anderen Netzen erreichbar
+- Ein Skript sorgt über /etc/cron.daily dafür, dass die Datenbank-Container während des Backups gestoppt werden um Fehler bei und durch die Erstellung zu vermeiden. Die Container selbst werden als tar.gz Dateien auf meinem NAS abgespeichert.
