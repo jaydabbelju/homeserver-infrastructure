@@ -4,7 +4,7 @@ services:
     container_name: ollama
     volumes:
       - /home/homeserver/ollama_data:/root/.ollama
-    restart: always
+    restart: "no"
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
