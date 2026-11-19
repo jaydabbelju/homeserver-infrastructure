@@ -13,7 +13,7 @@
 - Dokumenten-Management: Paperless-ngx
 - Lokale KI: Ollama (huihui_ai/llama3.2-abliterate:3b) + Open WebUI 
 - Git & DevOps: Gitea (Mirror aktiv)
-- Pi-hole ("Permit all origins" + Fritz!Box-DNS auf.69)
+- Pi-hole ("Permit all origins" + Fritz!Box-DNS auf .69)
 
 ## Weiteres
 - NAS über VPN aus anderen Netzen erreichbar.
