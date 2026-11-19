@@ -17,4 +17,4 @@ services:
       - /home/homeserver/open_webui_data:/app/backend/data
     depends_on:
       - ollama
-    restart: always
+    restart: "no"
