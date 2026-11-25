@@ -1,0 +1,10 @@
+[Unit]
+Description=Taeglicher Backup-Timer (holt verpasste Laeufe nach Boot nach)
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=5m
+
+[Install]
+WantedBy=timers.target
