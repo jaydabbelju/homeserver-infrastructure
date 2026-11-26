@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[Unit]
+Description=Konsistentes Backup der Homeserver-Datenbanken
+
+[Service]
+Type=oneshot
+ExecStart=/home/homeserver/infrastructure/scripts/backup_databases.sh
