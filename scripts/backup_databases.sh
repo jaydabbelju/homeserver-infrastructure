@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DATUM=$(date +%Y-%m-%d)
 ZIEL="/mnt/raid/nas/Backups/db_backup_$DATUM.tar.gz"
 
