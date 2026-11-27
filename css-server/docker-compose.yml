@@ -1,0 +1,20 @@
+services:
+  css-surf:
+    image: gameservermanagers/gameserver:css
+    container_name: css-server
+    user: "0:0"
+    restart: always
+    environment:
+      - TZ=Europe/Berlin
+      - GAMESERVER=cssserver
+    volumes:
+      - /mnt/raid/games/css-server:/data
+      - /etc/machine-id:/etc/machine-id
+    ports:
+      # Die Ports werden absichtlich an die lokale IP gebunden, da Server nur lokal laufen soll.
+      - "192.168.178.69:27015:27015/tcp"
+      - "192.168.178.69:27015:27015/udp"
+      - "192.168.178.69:27020:27020/udp"
+      - "192.168.178.69:27005:27005/udp"
+    tty: true
+    stdin_open: true
